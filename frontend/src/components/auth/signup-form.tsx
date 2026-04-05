@@ -153,7 +153,7 @@ export function SignupForm({className,...props}: React.ComponentProps<"div">) {
 
               {/* nút đăng ký */}
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? "Đang xử lý..." : "Tạo tài khoản"}
+                Tạo tài khoản
               </Button>
 
               <div className="relative">

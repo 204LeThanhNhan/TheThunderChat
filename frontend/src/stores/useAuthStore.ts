@@ -29,24 +29,15 @@ export const useAuthStore = create<AuthState>()(
             },
         
             signUp:  async (username, password, email, firstName, lastName) => {
-                let slowWarningTimeout: NodeJS.Timeout | null = null;
-                
                 try {
                     set({ loading : true });
         
-                    // Cảnh báo nếu request chậm (cold start)
-                    slowWarningTimeout = setTimeout(() => {
-                        toast.info("Server đang khởi động, vui lòng đợi thêm chút...");
-                    }, 3000);
-
                     // gọi API
                     await authService.signUp(username, password, email, firstName, lastName);
         
-                    if (slowWarningTimeout) clearTimeout(slowWarningTimeout);
                     toast.success("Đăng ký thành công! Bạn sẽ được chuyển sang trang đăng nhập");
                     return true;
                 } catch (error: any) {
-                    if (slowWarningTimeout) clearTimeout(slowWarningTimeout);
                     console.error(error);
                     const message = error?.response?.data?.message || error?.message || "Đăng ký không thành công";
                     toast.error(message);
@@ -57,26 +48,17 @@ export const useAuthStore = create<AuthState>()(
             }, 
         
             signIn: async (username, password) => {
-                let slowWarningTimeout: NodeJS.Timeout | null = null;
-                
                 try {
                     get().clearState();
                     set({loading: true});
 
-                    // Cảnh báo nếu request chậm (cold start)
-                    slowWarningTimeout = setTimeout(() => {
-                        toast.info("Server đang khởi động, vui lòng đợi thêm chút...");
-                    }, 3000);
-
                     const{accessToken}  = await authService.signIn(username, password); 
                     get().setAccessToken(accessToken);
         
-                    if (slowWarningTimeout) clearTimeout(slowWarningTimeout);
                     await get().fetchMe();
                     useChatStore.getState().fetchConversations();
                     toast.success("Đăng nhập thành công! Chào mừng trở lại Thunder Chat");
                 } catch (error: any) {
-                    if (slowWarningTimeout) clearTimeout(slowWarningTimeout);
                     console.error(error);
                     const message = error?.response?.data?.message || error?.message || "Đăng nhập không thành công";
                     toast.error(message);
