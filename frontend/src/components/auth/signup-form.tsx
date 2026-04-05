@@ -22,10 +22,10 @@ const signUpSchema = z.object({
 type SignUpFormValues = z.infer<typeof signUpSchema>
 
 export function SignupForm({className,...props}: React.ComponentProps<"div">) {
-  const {signUp} = useAuthStore();
+  const {signUp, loading} = useAuthStore();
   const navigate = useNavigate();
   /*handleSubmit chạy khi người dùng bấm đăng ký*/
-  const {register, handleSubmit, formState: {errors, isSubmitting}}= useForm<SignUpFormValues>({
+  const {register, handleSubmit, formState: {errors}}= useForm<SignUpFormValues>({
     resolver: zodResolver(signUpSchema)
   });
 
@@ -152,8 +152,8 @@ export function SignupForm({className,...props}: React.ComponentProps<"div">) {
                 </div>
 
               {/* nút đăng ký */}
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                Tạo tài khoản
+              <Button type="submit" className="w-full" disabled={loading}>
+                {loading ? "Đang xử lý..." : "Tạo tài khoản"}
               </Button>
 
               <div className="relative">
