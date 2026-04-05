@@ -108,7 +108,7 @@ export function NavUser({
     
       <FriendRequestDialog
         open={friendRequestOpen}
-        setOpen={setFriendRequestOpen}
+        setOpen={(value) => setFriendRequestOpen(typeof value === 'function' ? value(friendRequestOpen) : value)}
       />
 
 

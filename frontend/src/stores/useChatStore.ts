@@ -169,7 +169,7 @@ export const useChatStore = create<ChatState>()(
                     console.error(`Lỗi xảy ra khi gửi fetch message: ${error}`);
                 }
             },
-            updateConversation: async (conversation) => {
+            updateConversation: async (conversation: any) => {
                 set((state) => ({
                     conversations: state.conversations.map((c) => c._id === conversation._id ? {...c,...conversation} : c),
                 }));

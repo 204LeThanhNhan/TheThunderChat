@@ -3,7 +3,7 @@ import { draftService } from '@/services/draftService';
 import { debounce } from 'lodash';
 
 export const useDraftAutoSave = (conversationId: string | null) => {
-    const saveTimeoutRef = useRef<NodeJS.Timeout>();
+    const saveTimeoutRef = useRef<number>();
 
     const saveDraft = useCallback(async (content: string) => {
         if (!conversationId) return;
@@ -23,7 +23,7 @@ export const useDraftAutoSave = (conversationId: string | null) => {
     const debouncedSave = useCallback(
         debounce((content: string) => {
             saveDraft(content);
-        }, 2000),
+        }, 2000, { leading: false, trailing: true }),
         [saveDraft]
     );
 
