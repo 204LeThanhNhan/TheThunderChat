@@ -28,7 +28,8 @@ const ForgotPasswordDialog = () => {
 
         try {
             setLoading(true);
-            await axios.post('http://localhost:5001/api/auth/forgot-password', { email });
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+            await axios.post(`${apiUrl}/auth/forgot-password`, { email });
             toast.success("Email đặt lại mật khẩu đã được gửi. Vui lòng kiểm tra hộp thư!");
             setOpen(false);
             setEmail("");

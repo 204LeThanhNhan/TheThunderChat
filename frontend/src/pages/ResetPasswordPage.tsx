@@ -29,7 +29,8 @@ const ResetPasswordPage = () => {
 
         try {
             setLoading(true);
-            await axios.post(`http://localhost:5001/api/auth/reset-password/${token}`, { password });
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+            await axios.post(`${apiUrl}/auth/reset-password/${token}`, { password });
             toast.success("Đặt lại mật khẩu thành công! Vui lòng đăng nhập lại");
             navigate("/signin");
         } catch (error: any) {
