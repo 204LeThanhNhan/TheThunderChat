@@ -1,4 +1,4 @@
-import Notification from '../models/Notification.js';
+import Notification from '../schemas/Notification.js';
 import { io } from '../socket/index.js';
 
 // Create notification helper

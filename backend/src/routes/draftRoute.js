@@ -1,5 +1,5 @@
 import express from 'express';
-import ConversationDraft from '../models/ConversationDraft.js';
+import ConversationDraft from '../schemas/ConversationDraft.js';
 
 const router = express.Router();
 

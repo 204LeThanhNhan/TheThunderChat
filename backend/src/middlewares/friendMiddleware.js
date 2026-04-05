@@ -1,5 +1,5 @@
-import Conversation from "../models/Conversation.js";
-import Friend from "../models/Friend.js"
+import Conversation from "../schemas/Conversation.js";
+import Friend from "../schemas/Friend.js"
 
 const pair = (a,b) => {
     if(a < b){

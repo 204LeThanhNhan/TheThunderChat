@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-import User from '../models/User.js';
+import User from '../schemas/User.js';
 
 
 //authorization - xác minh user là ai, có quyền truy cập api hay không

@@ -1,8 +1,8 @@
 import express from "express";
 import bcrypt from 'bcrypt';
-import User from '../models/User.js';
+import User from '../schemas/User.js';
 import jwt from 'jsonwebtoken';
-import Session from '../models/Session.js';
+import Session from '../schemas/Session.js';
 import crypto from 'crypto';
 import { sendWelcomeEmail, sendResetPasswordEmail } from '../utils/emailService.js';
 import passport from 'passport';

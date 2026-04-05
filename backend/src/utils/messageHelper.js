@@ -1,5 +1,5 @@
 import { createNewMessageNotification } from './notificationHelper.js';
-import User from '../models/User.js';
+import User from '../schemas/User.js';
 
 export const updateConversationAfterCreateMessage = (conversation, message, senderId) => {
     conversation.set({

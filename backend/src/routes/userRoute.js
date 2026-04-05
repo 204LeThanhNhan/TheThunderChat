@@ -1,5 +1,5 @@
 import express from 'express';
-import User from "../models/User.js";
+import User from "../schemas/User.js";
 import { uploadImageFromBuffer } from "../middlewares/uploadMiddleware.js";
 import {upload} from "../middlewares/uploadMiddleware.js";
 

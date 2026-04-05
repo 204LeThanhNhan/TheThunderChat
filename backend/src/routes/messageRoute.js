@@ -1,7 +1,7 @@
 import  express  from "express";
-import Conversation from '../models/Conversation.js';
-import Message from '../models/Mesage.js';
-import ConversationDraft from '../models/ConversationDraft.js';
+import Conversation from '../schemas/Conversation.js';
+import Message from '../schemas/Mesage.js';
+import ConversationDraft from '../schemas/ConversationDraft.js';
 import { emitNewMessage, updateConversationAfterCreateMessage } from '../utils/messageHelper.js'
 import { io } from "../socket/index.js";
 import { checkFriendship, checkGroupMembership } from "../middlewares/friendMiddleware.js";

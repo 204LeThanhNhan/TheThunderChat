@@ -1,7 +1,7 @@
 import express from 'express';
-import Conversation from "../models/Conversation.js";
-import Message from "../models/Mesage.js";
-import MessageReaction from "../models/MessageReaction.js";
+import Conversation from "../schemas/Conversation.js";
+import Message from "../schemas/Mesage.js";
+import MessageReaction from "../schemas/MessageReaction.js";
 import { checkFriendship } from '../middlewares/friendMiddleware.js';
 import { io } from "../socket/index.js";
 

@@ -1,8 +1,8 @@
 import express from 'express';
-import MessageForward from '../models/MessageForward.js';
-import Message from '../models/Mesage.js';
-import Conversation from '../models/Conversation.js';
-import BlockedUser from '../models/BlockedUser.js';
+import MessageForward from '../schemas/MessageForward.js';
+import Message from '../schemas/Mesage.js';
+import Conversation from '../schemas/Conversation.js';
+import BlockedUser from '../schemas/BlockedUser.js';
 import { io } from '../socket/index.js';
 import { updateConversationAfterCreateMessage, emitNewMessage } from '../utils/messageHelper.js';
 

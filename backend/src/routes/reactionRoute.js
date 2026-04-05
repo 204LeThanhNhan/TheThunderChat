@@ -1,9 +1,9 @@
 import express from 'express';
-import MessageReaction from '../models/MessageReaction.js';
-import Message from '../models/Mesage.js';
+import MessageReaction from '../schemas/MessageReaction.js';
+import Message from '../schemas/Mesage.js';
 import { io } from '../socket/index.js';
 import { createReactionNotification } from '../utils/notificationHelper.js';
-import User from '../models/User.js';
+import User from '../schemas/User.js';
 
 const router = express.Router();
 

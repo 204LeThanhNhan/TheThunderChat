@@ -1,5 +1,5 @@
 import express from 'express';
-import Notification from '../models/Notification.js';
+import Notification from '../schemas/Notification.js';
 
 const router = express.Router();
 

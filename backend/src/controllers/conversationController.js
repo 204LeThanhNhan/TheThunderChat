@@ -1,4 +1,4 @@
-import Conversation from "../models/Conversation.js";
+import Conversation from "../schemas/Conversation.js";
 
 export const getUserConversationsForSocketIO = async (userId) => {
     try {

@@ -1,4 +1,4 @@
-import BlockedUser from '../models/BlockedUser.js';
+import BlockedUser from '../schemas/BlockedUser.js';
 
 // Middleware to check if users have blocked each other
 export const checkBlocked = async (req, res, next) => {

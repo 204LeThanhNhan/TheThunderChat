@@ -1,6 +1,6 @@
 import express from 'express';
-import BlockedUser from '../models/BlockedUser.js';
-import User from '../models/User.js';
+import BlockedUser from '../schemas/BlockedUser.js';
+import User from '../schemas/User.js';
 import { io } from '../socket/index.js';
 
 const router = express.Router();

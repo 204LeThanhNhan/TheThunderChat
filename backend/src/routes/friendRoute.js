@@ -1,7 +1,7 @@
 import express from 'express';
-import Friend from '../models/Friend.js';
-import User from '../models/User.js';
-import FriendRequest from '../models/FriendRequest.js';
+import Friend from '../schemas/Friend.js';
+import User from '../schemas/User.js';
+import FriendRequest from '../schemas/FriendRequest.js';
 import { createFriendRequestNotification, createFriendAcceptedNotification } from '../utils/notificationHelper.js';
 import { io } from '../socket/index.js';
 import { checkBlocked } from '../middlewares/blockMiddleware.js';
