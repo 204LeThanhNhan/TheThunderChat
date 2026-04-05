@@ -33,9 +33,11 @@ export function SignupForm({className,...props}: React.ComponentProps<"div">) {
     //gọi backend để sign up
     const {firstname, lastname, username ,email, password} = data;
 
-    await signUp(username, password, email, firstname, lastname);
+    const success = await signUp(username, password, email, firstname, lastname);
 
-    navigate("/signin");
+    if (success) {
+      navigate("/signin");
+    }
   }
 
   return (

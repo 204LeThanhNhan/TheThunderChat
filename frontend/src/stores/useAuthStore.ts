@@ -36,10 +36,12 @@ export const useAuthStore = create<AuthState>()(
                     await authService.signUp(username, password, email, firstName, lastName);
         
                     toast.success("Đăng ký thành công! Bạn sẽ được chuyển sang trang đăng nhập");
+                    return true;
                 } catch (error: any) {
                     console.error(error);
                     const message = error?.response?.data?.message || error?.message || "Đăng ký không thành công";
                     toast.error(message);
+                    return false;
                 }finally{
                     set({ loading : false });
                 }
