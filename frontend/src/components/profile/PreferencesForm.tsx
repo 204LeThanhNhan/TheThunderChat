@@ -130,7 +130,7 @@ const PreferencesForm = () => {
                                 placeholder="Nội dung tin nhắn"
                                 value={newValue}
                                 onChange={(e) => setNewValue(e.target.value)}
-                                className="min-h-[80px] max-h-[200px] w-full resize-none"
+                                className="min-h-[80px] max-h-[200px] max-w-[365px] resize-none"
                                 maxLength={500}
                             />
                             <div className="text-xs text-muted-foreground text-right">
@@ -178,7 +178,7 @@ const PreferencesForm = () => {
                             Danh sách tin nhắn nhanh ({quickMessagesArray.length})
                         </Label>
                         {quickMessagesArray.length > 0 ? (
-                            <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2">
+                            <div className="space-y-2 max-h-[400px] overflow-y-auto  max-w-[400px] resize-none">
                                 {quickMessagesArray.map(([key, value]) => (
                                     <div
                                         key={key}
@@ -189,7 +189,7 @@ const PreferencesForm = () => {
                                             <div className="text-sm font-medium text-primary mb-1">
                                                 /{key}
                                             </div>
-                                            <div className="text-xs text-muted-foreground whitespace-pre-wrap break-words">
+                                            <div className="text-xs text-muted-foreground whitespace-pre-wrap break-words max-w-full">
                                                 {value}
                                             </div>
                                         </div>
