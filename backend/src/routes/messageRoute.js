@@ -131,7 +131,7 @@ router.post('/group', checkGroupMembership, async (req, res) => {
 });
 
 // Upload file cho tin nhắn trực tiếp
-router.post('/direct/upload', checkBlocked, upload.array('files', 5), async (req, res) => {
+router.post('/direct/upload', upload.array('files', 5), checkBlocked, async (req, res) => {
     try {
         const { recipientId, conversationId } = req.body;
         const senderId = req.user._id;
@@ -255,7 +255,7 @@ router.post('/direct/upload', checkBlocked, upload.array('files', 5), async (req
 });
 
 // Upload file cho tin nhắn nhóm
-router.post('/group/upload', checkGroupMembership, upload.array('files', 5), async (req, res) => {
+router.post('/group/upload', upload.array('files', 5), checkGroupMembership, async (req, res) => {
     try {
         const { conversationId, content } = req.body;
         const senderId = req.user._id;
